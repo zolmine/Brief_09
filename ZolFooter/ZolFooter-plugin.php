@@ -1,10 +1,20 @@
 <?php
 
 /**
- * @package ZOLfooter
- * @author Zolmine
+ * @package Hfooter
+ * @author zolmine
  */
 
+/*
+Plugin Name: Zolfooter Plugin
+Plugin URI: https://github.com/Zolmine
+Description: add simple footer to your page.
+Version: 0.1
+Author: amine
+Author URI: https://github.com/zolmine
+License: GPLv2 or later
+Text Domain: Zolfooter
+*/
 
 
 
@@ -24,11 +34,9 @@ class ZolfooterPLugin
     // insert content into footer
     function inject_content()
     {
-        $opt_website_name = get_option('sf_opt_wesite' , 'Zolmine');
-        $opt_home_link  = get_option('sf_opt_text', 'home');
-        $opt_contact = get_option('sf_opt_contact', 'footerArea');
-        $opt_github = get_option('sf_opt_github' , 'Zolmine');
-        $opt_desc = get_option('sf_opt_desc' , 'desc');
+        $opt_website_name = get_option('zol_opt_website' , 'store');
+        $opt_github = get_option('zol_opt_github' , 'Zolmine');
+        $opt_desc = get_option('zol_opt_desc' , 'desc');
 
 
 
@@ -36,18 +44,15 @@ class ZolfooterPLugin
         $date = date("Y");
 
         echo "
-      <footer style='display:flex;flex-direction: column;background:#1f1f1f;justify-content:baseline; align-items:center;padding:1rem 2rem;'>
+      <footer style='display:flex;flex-direction: column;background:#f1ebeb;justify-content:baseline; align-items:center;padding:1rem 2rem;'>
       <div style='justify-content:baseline;width:100%;'> 
-          <h1 style='color: azure;'>$opt_website_name</h1>
-          <ul style='list-style: none; color: aliceblue; font-weight: 400; font-family: monospace; font-size: x-large;'>
-              <li><a href='$opt_home_link'>Home</a></li>
-              <li><a href='$opt_contact'>contact me</a></li>
-          </ul>
+          <h1 style='color: #000000;'>$opt_website_name</h1>
+          
       </div>
          <div style='font-weight: 400; font-family: monospace; font-size: 15px; display: flex; flex-direction: row; gap: 23px;'> 
-              <a style='color:#ccc;font-family:monospace;' href='https://github.com/$opt_github'>$opt_github</a>
+              <a style='color:#000000;font-family:monospace;' href='https://github.com/$opt_github'>$opt_github</a>
               <div style='height:23px;'></div>
-              <div style='color:#ccc;font-family:monospace;'>Copyright &copy; $date $opt_website_name | All Rights Rerserved</div>
+              <div style='color:#0a0606;font-family:monospace;'>Copyright &copy; $date $opt_website_name | All Rights Rerserved</div>
       </div>
         </footer>
     ";
@@ -68,13 +73,13 @@ class ZolfooterPLugin
             'ZolFooter Config',
             'ZolFooter',
             'manage_options',
-            'SF_config',
+            'zol_config',
             [$this, 'settings'],
-            'dashicons-buddicons-activity'
+            'dashicons-welcome-view-site'
         );
     }
 }
 
 if (class_exists('ZolfooterPLugin')) {
-    $Sf = new ZolfooterPLugin();
+    $zol = new ZolfooterPLugin();
 }

@@ -5,28 +5,22 @@ if (isset($_POST['submit'])) submit();
 
 function submit()
 {
-    $opt_website_name = $_POST['sf_opt_wesite'];
-    $opt_home_link = $_POST['sf_opt_text'];
-    $opt_contact = $_POST['sf_opt_contact'];
-    $opt_github = $_POST['sf_opt_github'];
+    $opt_website_name = $_POST['zol_opt_website'];
+    $opt_github = $_POST['zol_opt_github'];
 
 
 
 
 
-    global $sf_opt_wesite, $sf_opt_text, $sf_opt_contact , $sf_opt_github ;
+    global $zol_opt_wesite, $zol_opt_github ;
 
-    if (get_option('sf_opt_wesite') != trim($opt_website_name))
-        update_option('sf_opt_text', trim($opt_website_name));
+    if (get_option('zol_opt_website') != trim($opt_website_name))
+        update_option('zol_opt_text', trim($opt_website_name));
 
-    if (get_option('sf_opt_text') != trim($opt_home_link))
-        update_option('sf_opt_brand', trim($opt_home_link));
 
-    if (get_option('sf_opt_contact') != trim($opt_contact))
-        update_option('sf_opt_github', trim($opt_contact));
 
-    if (get_option('sf_opt_github') != trim($opt_github))
-        update_option('sf_opt_github', trim($opt_github));
+    if (get_option('zol_opt_github') != trim($opt_github))
+        update_option('zol_opt_github', trim($opt_github));
 
 }
 
@@ -40,7 +34,7 @@ function submit()
     <!--  -->
     <?php if (isset($_POST['submit'])) : ?>
         <div id="message" class="updated below-h2">
-            <p> Your Footer has been added successfully...!</p>
+            <p> Your Footer has been added succeszolully...!</p>
         </div>
     <?php endif; ?>
     <!--  -->
@@ -53,22 +47,13 @@ function submit()
                     <table  class="form-table">
                         <tr>
                             <th scope="row">site title</th>
-                            <td><input type="text" name="sf_opt_wesite" value="<?php echo get_option('sf_opt_wesite'); ?>"
+                            <td><input type="text" name="zol_opt_website" value="<?php echo get_option('zol_opt_website'); ?>"
                                        style="width:350px;" /></td>
                         </tr>
-                        <tr>
-                            <th scope="row">store link(url)</th>
-                            <td><input type="text" name="sf_opt_text" value="<?php echo get_option('sf_opt_text'); ?>"
-                                       style="width:350px;" /></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">contact(url)</th>
-                            <td><input type="text" name="sf_opt_contact" value="<?php echo get_option('sf_opt_contact'); ?>"
-                                       style="width:350px;" /></td>
-                        </tr>
+
                         <tr>
                             <th scope="row">Github Username</th>
-                            <td><input type="text" name="sf_opt_github" value="<?php echo get_option('sf_opt_github'); ?>"
+                            <td><input type="text" name="zol_opt_github" value="<?php echo get_option('zol_opt_github'); ?>"
                                        style="width:350px;" /></td>
                         </tr>
                         <tr>
