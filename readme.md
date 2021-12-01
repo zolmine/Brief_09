@@ -1,4 +1,4 @@
-## Zolfooter
+## WordPress Plugin Zolfooter
 
 plugin qui ajouter un footer en bas des pages.
 <br/>
